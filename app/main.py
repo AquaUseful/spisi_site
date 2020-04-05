@@ -9,9 +9,9 @@ from app.resources import login_form, add_form
 is_heroku = os.environ.get("IS_HEROKU", False)
 
 if is_heroku:
-    mongocli = pymongo.MongoClient(config.MONGO_CONN, config.MONGO_PORT)
-else:
     mongocli = pymongo.MongoClient(os.environ.get("MONGODB_URI", ""))
+else:
+    mongocli = pymongo.MongoClient(config.MONGO_CONN, config.MONGO_PORT)
 app = quart.Quart(__name__)
 app.config["SECRET_KEY"] = os.urandom(32)
 mongodb = mongocli.litra
