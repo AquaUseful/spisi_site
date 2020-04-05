@@ -3,3 +3,4 @@ pymongo
 hypercorn
 werkzeug
 flask-wtf
+dnspython
