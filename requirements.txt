@@ -2,3 +2,4 @@ quart
 pymongo
 hypercorn
 werkzeug
+flask_wtf
