@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="my-5">
+    <div class="d-flex justify-content-around align-items-center pd-3">
+        <h2>
+            Списать литру
+        </h2>
+        <a href="/login" role="button" class="btn btn-secondary">Добавить</a>
+    </div>
+    <div class="d-flex flex-column justify-content-center">
+        {% for answer in answers %}
+        <div class="d-flex justify-content-center align-items-around py-3">
+            <h3 class="mr-2">{{answer["number"]}}</h3>
+            <a href="/answer/{{answer['number']}}" role="button" class="btn btn-primary">Открыть</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <form action="" method="POST">
+        {{form.hidden_tag()}}
+        {{form.csrf_token}}
+        <div class="form-group">
+            {{form.password.label}}
+            {{form.password(class="form-control")}}
+            {% for error in form.password.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+            {% endfor %}
+        </div>
+        <div>
+            {{form.submit(class="btn btn-primary btn-lg", type="submit")}}
+        </div>
+    </form>
+</div>
+{% endblock %}
