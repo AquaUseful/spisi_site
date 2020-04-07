@@ -25,6 +25,7 @@ async def root():
 @app.route("/index")
 async def index():
     answers = mongodb.qa.find(projection=("number", "question"))
+    answers = sorted(answers, key=lambda val: val["number"])
     return await quart.render_template("index.html", title="Списать литру", answers=answers)
 
 
