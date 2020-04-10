@@ -4,9 +4,13 @@
     <h1>
         <span class="badge badge-primary">Вопрос {{answer["number"]}}</span>
     </h1>
-    <h2>Вопрос:</h2>
-    <p>{{answer["question"]}}</p>
-    <h2>Ответ:</h2>
-    <p>{{answer["answer"]}}</p>
+    <div class="border border-primary rounded px-2 py-1 mb-1">
+        <h2>Вопрос:</h2>
+        <p class="mb-1">{{answer["question"]}}</p>
+    </div>
+    <div class="border border-secondary rounded px-2 py-1">
+        <h2>Ответ:</h2>
+        <p class="mb-1">{{answer["answer"]}}</p>
+    </div>
 </div>
 {% endblock %}
