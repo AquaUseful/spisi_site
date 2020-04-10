@@ -68,4 +68,9 @@ async def add():
 @app.route("/answer/<int:number>")
 async def answer(number):
     answer = mongodb.qa.find_one({"number": number})
-    return await quart.render_template("answer.html", answer=answer)
+    if answer:
+        return await quart.render_template("answer.html",
+                                           answer=answer,
+                                           title=f"{answer['number']} вопрос")
+    else:
+        await quart.abort(404)
