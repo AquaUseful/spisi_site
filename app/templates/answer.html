@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div>
-    <h1>Номер вопроса: {{answer["number"]}}</h1>
+    <h1>
+        <span class="badge badge-primary">Вопрос {{answer["number"]}}</span>
+    </h1>
     <h2>Вопрос:</h2>
     <p>{{answer["question"]}}</p>
     <h2>Ответ:</h2>
